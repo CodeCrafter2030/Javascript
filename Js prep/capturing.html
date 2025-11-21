@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .divs{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="divs" id="parent" style="padding: 1rem; background-color: aqua;">
+        parent
+        <div class="divs" id="child1" style="padding: 1rem; background-color: azure;">
+            child1
+            <div class="divs" id="child2" style="padding: 1rem; background-color: aquamarine;">
+                child2
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("parent").addEventListener("click", () => {
+            console.log("clicked on parent");
+        },true) //here we have marked the third argument for addEventListener function as true -> event capturing 
+
+        document.getElementById("child1").addEventListener("click", () => {
+            console.log("clicked on child1");
+        },true)
+
+        document.getElementById("child2").addEventListener("click", () => {
+            console.log("clicked on child2");
+        } ,true)
+    </script>
+</body>
+</html>
